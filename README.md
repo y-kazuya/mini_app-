@@ -22,3 +22,25 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+やること！
+
+db 設計
+user table
+ name : strings
+ email : strings
+ pass
+
+ hasmany :posts
+
+post table
+ comment: strings
+ user_id: integer :null: false, foreign_key: true
+
+ belongs_to: user
+
+
+DB作成
+
+コントローラー作成
+user  #new create edit
+post  #index new create edit update show delete 7つ？
