@@ -44,3 +44,7 @@ DB作成
 コントローラー作成
 user  #new create edit
 post  #index new create edit update show delete 7つ？
+
+
+routes設定
+root posti#index
