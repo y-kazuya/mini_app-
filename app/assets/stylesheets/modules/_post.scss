@@ -1,0 +1,26 @@
+
+.posts{
+  height: calc(100vh - $hedder_height);
+  width: 61%;
+  margin: 80px auto;
+  .card{
+    margin-bottom: 50px;
+    .card--content{
+      border-radius: 0 0 2px 2px;
+      word-break: break-word;
+      padding: 15px 25px;
+ 
+    }
+    .card--buttons{
+      margin-left: 20px;
+
+      .btn{
+          margin:10px 7px 17px 0;
+        a{
+          color: white;
+          font-size: 11px;
+        }
+      }
+    }
+  }  
+}

@@ -1,0 +1,9 @@
+.row
+  = form_for @post, html: {class:"col s12"} do |f|
+    .row
+      .input-field.col.s12
+        =f.text_area :text, class: "materialize-textarea", id: "textarea1"
+        =f.label :text do
+          本文
+    = f.submit '送信',class: "waves-effect waves-light btn"
+    

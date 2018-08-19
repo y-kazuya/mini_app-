@@ -1,0 +1,21 @@
+.row {
+  width: 83%;
+  margin: 40px auto;
+  .s12{
+    .row{
+      .materialize-textarea{
+
+      }
+    }
+    .btn{
+      height: $send_botton_height;
+      width: 100px;
+      color: white;
+      .waves-button-input{
+        color: white;
+        line-height: $send_botton_height;
+      }
+    }
+  }
+}
+
