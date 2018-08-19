@@ -1,0 +1,19 @@
+nav{
+  height: $hedder_height;
+  .nav-wrapper{
+    height:300px !important;
+    line-height: $hedder_height;
+    #logo{
+      a{
+        margin-left: 50px;
+      }
+    }
+    #nav-mobile{
+      a{
+        font-size: 19px;
+        
+      }
+    }
+  }
+}
+
