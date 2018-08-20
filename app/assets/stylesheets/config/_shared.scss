@@ -1,0 +1,46 @@
+#error_explanation{   //エラーメッセ！
+border: solid 5px #CC3366;
+padding: 10px; 
+background-color: #FFFF99;
+　h2{font-size: 10px;}  // エラータイトル
+  ul{                    //エラーリスト
+    li{                   //エラー文       
+    }
+  }
+} 
+
+
+.btn {
+  a{color: white;}
+}
+
+
+.wrap{
+
+  .form_title{
+    margin-top: 20px;
+    padding: 10px;
+    padding-right: 600px;
+    padding-bottom: 5px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    border-left: solid 10px #26a69a;
+    border-bottom: solid 7px #26a69a;
+    // background-color: #FF773E;
+    color: black;
+   
+
+  }
+}
+.pagination{     //ページネーション
+  margin-bottom: 0px;
+  background-color: white !important;
+  box-shadow: none;
+  span{
+    color: blue !important;  //選択要素
+    a{color: black } //文字
+  }
+}
+    
+    

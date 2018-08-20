@@ -1,13 +1,32 @@
 nav{
   height: $hedder_height;
   .nav-wrapper{
-    height:300px !important;
     line-height: $hedder_height;
     #logo{
+      margin-left: 47%;
       a{
-        margin-left: 50px;
       }
     }
+    .nav-left{
+      // display: inline-block;
+      float: left;
+      font-size: 19px;
+      padding-left: 10px;
+      padding-right: 10px;
+      overflow: hidden;
+      max-width: 20%;
+      cursor: pointer;
+      &:hover{
+        text-decoration: white wavy underline;
+      }
+    }
+    .login{
+      cursor: pointer;
+      &:hover{
+        text-decoration: white wavy underline;
+      }
+    }
+    
     #nav-mobile{
       a{
         font-size: 19px;

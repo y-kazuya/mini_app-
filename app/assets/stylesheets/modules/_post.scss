@@ -3,16 +3,48 @@
   height: calc(100vh - $hedder_height);
   width: 61%;
   margin: 80px auto;
+  .user-page-title{
+    margin-bottom: 20px;
+    font-size: 25px;
+    border-bottom: solid 2px #C0C0C0;
+    border-left: solid 7px #ee6e73;
+    background-color: #FFABCE;
+    &__name{
+      padding-left: 3px;
+      color: #FAFAD2;
+
+    }
+
+    &__after{
+      color: #008080;
+      font-size: 15px;
+
+    }
+  }
+  
+  .card-name{
+    border-bottom: double 2px #ee6e73;
+    display: inline-block;
+    padding: 5px;
+    padding-bottom: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  
   .card{
     margin-bottom: 50px;
+    margin-top: 0px;
     .card--content{
       border-radius: 0 0 2px 2px;
       word-break: break-word;
       padding: 15px 25px;
+      border-bottom: groove 1px #ee6e73;
  
     }
     .card--buttons{
       margin-left: 20px;
+      position: relative;
 
       .btn{
           margin:10px 7px 17px 0;
@@ -21,6 +53,13 @@
           font-size: 11px;
         }
       }
+
+      .ooo{
+        color: #C0C0C0;
+        position: absolute;
+        right: 0;
+      }
+        
     }
   }  
 }

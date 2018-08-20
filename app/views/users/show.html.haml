@@ -1,0 +1,13 @@
+.wapper
+  = render "shared/hedder"
+    
+  
+  .posts
+    .user-page-title
+      %span.user-page-title__name
+        = @user.name
+      %span.user-page-title__after
+        = "さんの投稿です！(全#{@count}件)"
+
+    = render partial: 'shared/post', collection: @posts  
+    = paginate(@posts)

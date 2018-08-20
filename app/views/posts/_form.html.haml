@@ -1,8 +1,14 @@
 .row
+  .wrap
+    .form_title
+      -if controller.action_name == "new"  
+        post
+      - else
+        Edit
   = form_for @post, html: {class:"col s12"} do |f|
     .row
       .input-field.col.s12
-        =f.text_area :text, class: "materialize-textarea", id: "textarea1"
+        =f.text_area :text, class: "materialize-textarea", id: "textarea1",value: "#{@post.text}"
         =f.label :text do
           本文
     = f.submit '送信',class: "waves-effect waves-light btn"

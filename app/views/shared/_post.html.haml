@@ -1,49 +1,25 @@
-.posts
-  .card
-    .card--content
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    .card--buttons
-      .waves-effect.waves-light.btn
-        =link_to "Show", root_path
-      .waves-effect.waves-light.btn
-        =link_to "Edit", root_path
-      .waves-effect.waves-light.btn
-        =link_to "destryo", root_path
+=link_to user_path(post.user), class: "card-name" do
+  %span.name
+    = post.user.name
+  %span.plus
+    さんの投稿
 
-  .card
-    .card--content
-      bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    .card--buttons
+.card
+  .card--content
+    = post.text
+  .card--buttons
+    .waves-effect.waves-light.btn
+      =link_to "Show", post_path(post)
+    .ooo
+      = "投稿日時: #{post.created_at.strftime("%Y/%m/%d %H:%M")}"
+    - if user_signed_in? && current_user.id == post.user.id 
       .waves-effect.waves-light.btn
-        =link_to "Show", root_path
+        =link_to "Edit", edit_post_path(post)
       .waves-effect.waves-light.btn
-        =link_to "Edit", root_path
-      .waves-effect.waves-light.btn
-        =link_to "destryo", root_path
-
-  .card
-    .card--content
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    .card--buttons
-      .waves-effect.waves-light.btn
-        =link_to "Show", root_path
-      .waves-effect.waves-light.btn
-        =link_to "Edit", root_path
-      .waves-effect.waves-light.btn
-        =link_to "destryo", root_path
-
-  .card
-    .card--content
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    .card--buttons
-      .waves-effect.waves-light.btn
-        =link_to "Show", root_path
-      .waves-effect.waves-light.btn
-        =link_to "Edit", root_path
-      .waves-effect.waves-light.btn
-        =link_to "destryo", root_path
-
+        =link_to "Destroy", "/posts/#{post.id}", method: :delete
+    
+      
+    
 
 
 

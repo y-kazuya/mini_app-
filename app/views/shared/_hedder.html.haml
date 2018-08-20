@@ -2,10 +2,22 @@
   .nav-wrapper
     .brand-logo#logo
       =link_to "BLOG", root_path
+    - if user_signed_in? 
+      .nav-left.login
+        =link_to "#{current_user.name}さんのマイページ", user_path(current_user)
+    - else
+      .nav-left
+        ログインしてね⭐️
+
     %ul.right.hide-on-med-and-down#nav-mobile.nav_lists
-      %li
-        =link_to "Singin", root_path
-      %li
-        =link_to "SingOut", root_path
-      %li
-        =link_to "New", new_post_path
+      - if user_signed_in? 
+        %li
+          =link_to "New", new_post_path
+        %li
+          =link_to "Singout", destroy_user_session_path, method: :delete
+      - else
+        %li
+          =link_to "Singin", new_user_session_path
+        %li
+          =link_to "Singup", new_user_registration_path
+

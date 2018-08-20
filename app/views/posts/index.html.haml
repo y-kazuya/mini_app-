@@ -1,4 +1,5 @@
 .wapper
   = render "shared/hedder"
-  = render "shared/post"
-
+  .posts
+    = render partial: 'shared/post', collection: @posts  
+    = paginate(@posts)
