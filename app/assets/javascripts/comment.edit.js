@@ -16,4 +16,46 @@ $(function(){
   });
 
   
+  $(".comment").on("submit", function(e){
+    e.preventDefault();
+    var url = $(this).attr('action');
+    var textarea = $("#autocomplete-input")
+    var text = textarea.val() //取得データ
+    var numberarea = $(".edit--comment--score")
+    var score = numberarea.val() //取得データ
+    $.ajax({
+      url: url,
+      type: "PATCH",
+      data: {
+        comment: {
+          text: text ,
+          score: score,
+        }
+      },
+      dataType: 'json',
+    })
+    .done(function(data) {
+      console.log("oi")
+      $(".edit--btn").next().css("display", "none")
+      $("#submit--bottun").prop("disabled", false);
+      $(".edit--btn").show(1000)
+      $(".comment").find(".edit--comment--text").css("display", "none");
+      $(".comment").find("#text").text(data.text)
+      $(".comment").find("#text").show();
+      $(".comment").find(".edit--comment--score").css("display", "none");
+      $(".comment").find("#comment-score").text(data.score)
+      $(".comment").find("#comment-score").show();
+
+
+
+
+
+
+      
+    })
+    .fail(function() {
+      alert('error');
+    });
+  })
+
 });

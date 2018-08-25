@@ -89,7 +89,7 @@
                 %span 
                   - case @sort
                     - when "P_I"
-                      =link_to "日時", ".?sort_type=new", sort_type: "new"
+                      =link_to "日時", "?so.rt_type=new", sort_type: "new"
                     - when "P_S"
                       =link_to "日時", "./#{@post.id}?sort_type=new", sort_type: "new"
                     - when "U_S"

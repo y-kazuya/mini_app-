@@ -447,4 +447,4 @@
   if (M.jQueryLoaded) {
     M.initializeJqueryWrapper(Autocomplete, 'autocomplete', 'M_Autocomplete');
   }
-})(cash);
+});

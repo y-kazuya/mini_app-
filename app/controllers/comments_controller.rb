@@ -3,14 +3,18 @@ class CommentsController < ApplicationController
     
     def create
       @comment = @post.comments.new(comment_params) 
-      @comment.save if user_signed_in? && @comment.score <= 100 && @comment.score >= 0
+      @comment.save if user_signed_in? 
       redirect_to post_path(@post)
     end
 
     def update
       @comment = Comment.find(params[:id])
-      @comment.update(comment_params) if @comment.user_id == current_user.id
-      redirect_to post_path(@post)
+      if @comment.update(comment_params)
+        respond_to do |format|
+          format.html { redirect_to root_path }
+          format.json
+        end
+      end
     end
     private
     def comment_params

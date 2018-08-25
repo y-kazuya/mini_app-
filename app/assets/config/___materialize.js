@@ -1058,7 +1058,7 @@ var Component = function () {
   return Component;
 }();
 
-; // Required for Meteor package, the use of window prevents export by Meteor
+;
 (function (window) {
   if (window.Package) {
     M = {};
@@ -1071,18 +1071,6 @@ var Component = function () {
 })(window);
 
 // AMD
-if (typeof define === 'function' && define.amd) {
-  define('M', [], function () {
-    return M;
-  });
-
-  // Common JS
-} else if (typeof exports !== 'undefined' && !exports.nodeType) {
-  if (typeof module !== 'undefined' && !module.nodeType && module.exports) {
-    exports = module.exports = M;
-  }
-  exports.default = M;
-}
 
 M.keys = {
   TAB: 9,
