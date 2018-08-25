@@ -1,5 +1,5 @@
 #error_explanation{   //エラーメッセ！
-border: solid 5px #CC3366;
+border: solid 5px $main_color;
 padding: 10px; 
 background-color: #FFFF99;
 　h2{font-size: 10px;}  // エラータイトル
@@ -25,8 +25,8 @@ background-color: #FFFF99;
     display: inline-block;
     text-align: center;
     font-size: 30px;
-    border-left: solid 10px #26a69a;
-    border-bottom: solid 7px #26a69a;
+    border-left: solid 10px $main_color;
+    border-bottom: solid 7px $main_color;
     // background-color: #FF773E;
     color: black;
    
@@ -42,5 +42,12 @@ background-color: #FFFF99;
     a{color: black } //文字
   }
 }
-    
-    
+  
+.bluecolor {
+  $main_color : blue !global;
+}
+
+.main__color{
+  $main_color: #ee6e73 !global;
+  $sub_color: #8e4245 !global;
+}

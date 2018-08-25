@@ -29,12 +29,12 @@
 .btn-small[disabled],
 .btn-flat[disabled] {
   pointer-events: none;
-  background-color: $button-disabled-background !important;
+  background-color: $main_color !important;
   box-shadow: none;
   color: $button-disabled-color !important;
   cursor: default;
   &:hover {
-    background-color: $button-disabled-background !important;
+    background-color: $main_color !important;
     color: $button-disabled-color !important;
   }
 }
@@ -57,7 +57,7 @@
 .btn,
 .btn-floating {
   &:focus {
-    background-color: darken($button-raised-background, 10%);
+    background-color: darken($main_color, 10%);
   }
 }
 
@@ -65,14 +65,14 @@
 .btn {
   text-decoration: none;
   color: $button-raised-color;
-  background-color: $button-raised-background;
+  background-color: $main_color;
   text-align: center;
   letter-spacing: .5px;
   @extend .z-depth-1;
   transition: background-color .2s ease-out;
   cursor: pointer;
   &:hover {
-    background-color: $button-raised-background-hover;
+    background-color: $sub_color;
     @extend .z-depth-1-half;
   }
 }

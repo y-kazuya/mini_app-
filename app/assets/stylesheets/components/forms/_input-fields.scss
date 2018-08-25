@@ -4,7 +4,7 @@
 /* Style Placeholders */
 
 ::placeholder {
-  color: $placeholder-text-color;
+  color: $main_color;
 }
 
 /* Text inputs */
@@ -26,7 +26,7 @@ textarea.materialize-textarea {
   // General Styles
   background-color: transparent;
   border: none;
-  border-bottom: $input-border;
+  border-bottom:1px solid $sub_color;
   border-radius: 0;
   outline: none;
   height: $input-height;
@@ -41,25 +41,25 @@ textarea.materialize-textarea {
   // Disabled input style
   &:disabled,
   &[readonly="readonly"] {
-    color: $input-disabled-color;
-    border-bottom: $input-disabled-border;
+    color: $main_color;
+    border-bottom:1px solid $sub_color;
   }
 
   // Disabled label style
   &:disabled+label,
   &[readonly="readonly"]+label {
-    color: $input-disabled-color;
+    color: $main_color;
   }
 
   // Focused input style
   &:focus:not([readonly]) {
-    border-bottom: 1px solid $input-focus-color;
+    border-bottom: 1px solid $sub_color;
     box-shadow: 0 1px 0 0 $input-focus-color;
   }
 
   // Focused label style
   &:focus:not([readonly])+label {
-    color: $input-focus-color;
+    color: $main_color;
   }
 
   // Hide helper text on data message
@@ -82,7 +82,7 @@ textarea.materialize-textarea {
     @extend %custom-success-message;
   }
   &:focus.valid ~ label {
-    color: $input-success-color;
+    color: $main_color;
   }
 
   // Invalid Input Style
@@ -114,11 +114,11 @@ textarea.materialize-textarea {
 
 /* Validation Sass Placeholders */
 %valid-input-style {
-  border-bottom: 1px solid $input-success-color;
+  border-bottom: 1px solid $sub_color;
   box-shadow: 0 1px 0 0 $input-success-color;
 }
 %invalid-input-style {
-  border-bottom: $input-invalid-border;
+  border-bottom: $sub_color;
   box-shadow: 0 1px 0 0 $input-error-color;
 }
 %hidden-text {
@@ -338,7 +338,7 @@ textarea {
 /* Autocomplete */
 .autocomplete-content {
   li {
-    .highlight { color: #444; }
+    .highlight { color: $main_color; }
 
     img {
       height: $dropdown-item-height - 10;

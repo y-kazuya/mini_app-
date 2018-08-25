@@ -4,22 +4,45 @@
   %span.plus
     さんの投稿
 
-.card
+- average = post.comments.average(:score).to_i
+- if average == 100
+  -set_class = "card--reinbow"
+- elsif average > 80
+  -set_class = "card--gold"
+- elsif average > 70
+  -set_class = "card--silver"
+- elsif average > 60
+  -set_class = "card--bronze"
+- elsif average == 0 && post.comments.average(:score)
+  -set_class = "card--0"
+
+ 
+
+.card{ class: "#{set_class}" }
   .card--content
     = post.text
   .card--buttons
     .waves-effect.waves-light.btn
       =link_to "Show", post_path(post)
+    .card--average
+      - if average != 0
+        = "平均点#{average}"
+      - elsif average == 0 && post.comments.average(:score)
+        0点...
+      - else
+        未評価です
+      
     .ooo
+      = "コメント数 : #{post.comments.count}件"
       = "投稿日時: #{post.created_at.strftime("%Y/%m/%d %H:%M")}"
     - if user_signed_in? && current_user.id == post.user.id 
       .waves-effect.waves-light.btn
         =link_to "Edit", edit_post_path(post)
-      .waves-effect.waves-light.btn
-        =link_to "Destroy", "/posts/#{post.id}", method: :delete
+      .waves-effect.waves-light.btn#destroy
+        =link_to "Destroy", "/posts/#{post.id}", method: :delete 
     
-      
     
+  
 
 
 

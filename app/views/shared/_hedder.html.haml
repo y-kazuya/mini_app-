@@ -7,7 +7,7 @@
         =link_to "#{current_user.name}さんのマイページ", user_path(current_user)
     - else
       .nav-left
-        ログインしてね⭐️
+        =link_to "ログインしてください", new_user_session_path
 
     %ul.right.hide-on-med-and-down#nav-mobile.nav_lists
       - if user_signed_in? 
@@ -20,4 +20,108 @@
           =link_to "Singin", new_user_session_path
         %li
           =link_to "Singup", new_user_registration_path
+      %li#setting_bottun
+        %a
+          Setting
+%ul.collapsible
+  %li.sub_menu
+    .collapsible-header
+      Font-size
+      %span.badge
+        +
+    %li.sub_menu_content
+      .collapsible-header
+        %ul
+          %li.font_size
+            %label
+              %input.font_type(name="group2" type="radio" value="small")
+              %span 
+                文字: 小 
+          %li.font_size
+            %label
+              %input.font_type(name="group2" type="radio" value="midium"  checked="checked")
+              %span 
+                文字: 中
+          %li.font_size      
+            %label
+              %input.font_type(name="group2" type="radio" value= "large")
+              %span 
+                文字: 大
+      
+  %li.sub_menu
+    .collapsible-header
+      Color
+      %span.badge
+        +
+    %li.sub_menu_content
+      .collapsible-header
+        %ul
+          %li.color_name
+            %label
+              %input.color_type(name="group1" type="radio" checked="checked" value ="default")
+              %span 
+                Default
+              元に戻るよ
+          %li.color_name      
+            %label
+              %input.color_type(name="group1" type="radio" value="blue")
+              %span 
+                BLUE
+              青色になるよ
+          %li.color_name      
+            %label
+              %input.color_type(name="group1" type="radio" value="green")
+              %span 
+                GREEN
+              緑になるよ
+  -if @sort.present?
+    %li.sub_menu
+      .collapsible-header
+        Sort
+        %span.badge
+          +
+      %li.sub_menu_content
+        .collapsible-header
+          %ul
+            %li.sort
+              %label
+                %input.sort_type(name="group1" type="radio" checked="checked" value ="default")
+                %span 
+                  - case @sort
+                    - when "P_I"
+                      =link_to "日時", ".?sort_type=new", sort_type: "new"
+                    - when "P_S"
+                      =link_to "日時", "./#{@post.id}?sort_type=new", sort_type: "new"
+                    - when "U_S"
+                      =link_to "日時", "./#{@user.id}?sort_type=new", sort_type: "new"
+            %li.sort    
+              %label
+                %input.sort_type(name="group1" type="radio" value="blue")
+                %span
+                  - case @sort
+                    - when "P_I"
+                      =link_to "スコア" , ".?sort_type=score", sort_type: "score"
+                    - when "P_S"
+                      =link_to "スコア" , "./#{@post.id}?sort_type=score", sort_type: "score"   
+                    - when "U_S"
+                      =link_to "スコア" , "./#{@user.id}?sort_type=score", sort_type: "score"  
+            - unless @sort == "P_S"
+              %li.sort
+                %label
+                  %input.sort_type(name="group1" type="radio" value="green")
+                  %span
+                    - case @sort
+                      - when "P_I"
+                        =link_to "コメント数", ".?sort_type=comments", sort_type: "comments"
+                      - when "P_S"
+                        =link_to "コメント数", "./#{@post.id}?sort_type=comments", sort_type: "comments"
+                      - when "U_S"
+                        =link_to "コメント数", "./#{@user.id}?sort_type=comments", sort_type: "comments"
+                        
+                  
+
+　        
+
+
+
 

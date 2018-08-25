@@ -1,0 +1,125 @@
+.comment--warp{
+  width: 100%;
+  height: 186px;
+  position: relative;
+    
+  &--form{
+  position: absolute;
+  top: 0;
+  position: relative;
+  left: 400px;
+  width: 69%;
+  height: 200px
+  }
+}
+#form--number{
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    padding-left: 11px;
+  }
+  
+  #form--bottun{
+    position: absolute;
+    bottom: 0;
+    right: 250px;
+  }
+  
+ 
+  
+
+
+
+.comment--title{
+  font-family: Haettenschweiler,sans-serif;
+  
+  &__text{
+    padding: 1px 5px 1px 3px;
+    color: #ee6e73;
+    border-left: solid 7px #ee6e73;;
+    border-bottom: solid 3px #ee6e73;;
+    font-size: 20px;
+    
+
+
+  }
+  &__count{
+    padding: 1px 30px 1px 1px;
+    border-bottom: solid 3px #ee6e73;;
+    color: #C0C0C0;
+  }
+}
+
+.comments{
+  margin-top: 20px;
+  .comment{
+    border: solid 2px #CCCCCC;
+    min-height: 100px;
+    padding:5px 8px;
+    word-break: break-all;
+
+
+    &--info{
+      position: relative;
+      min-height: 30px;
+      border-bottom: dashed 2px #CCCCCC;
+      text-align: center;
+      padding: 4px 4px;
+      &__name{
+        position: absolute;
+        
+      }  
+      &__date{
+        position: absolute;
+        right: 0; 
+      }
+
+      &__score{
+        display: inline-block;
+        #comment-score{
+          border-bottom: solid 2px pink;
+          
+        }
+      }
+
+      .edit--comment--score{
+        display: none;
+        width: 40px;
+        height: 17px;
+        padding:4px;
+        background-color: rgba(255, 250, 250 , 0.8);
+        border-bottom: none;
+      }
+    }
+    &--text{
+      .edit--comment--text{
+        display: none;
+        background-color: rgba(255, 250, 250 , 0.8);
+        height: 20px;
+        padding-top: 10px;
+        margin: 0;
+        border-bottom: none;
+        font-style: oblique; 
+      }
+      
+      
+    
+    }
+    &--edit{
+      text-align: right;
+      border-top: dashed 2px #CCCCCC;
+      .edit--btn{
+        display: inline-block;
+        font-size: 5px;
+        margin-top: 3px;
+
+      }
+      .submit--btn{
+        display: none;
+        font-size: 5px;
+        margin-top: 3px;
+      }
+    }
+    
+  }
+}

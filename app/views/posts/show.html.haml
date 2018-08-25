@@ -2,3 +2,34 @@
   = render "shared/hedder"
   .posts
     = render partial: 'shared/post', locals: {post: @post}
+  - if user_signed_in? &&  @post.comments.find_by(user_id: current_user.id) == nil
+    .comment--warp
+      .comment--warp--form
+        .row
+          = form_for [@post, @comment], html: {class:"col s12"} do |f|
+            .row
+              .input-field.col.s12
+                =f.text_field :text, id: "autocomplete-input", class: "autocomplete"
+                =f.label :text do
+                  コメント
+              - unless @post.user_id == current_user.id
+                #form--number  
+                  =f.number_field :score, max: 100, min: 0
+                  =f.label :score do
+                    スコア
+              #form--bottun
+                = f.submit '送信',class: "waves-effect waves-light btn"
+        
+  .posts
+    .comment--title
+      %span.comment--title__text
+        コメント一覧           
+        -if @average
+          = "平均#{@average}点"
+        - else
+          未評価です
+      %span.comment--title__count
+        = "全#{@count}件"
+    .comments
+      = render partial: 'comment', collection: @comments
+      = paginate(@comments)

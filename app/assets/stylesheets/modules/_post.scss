@@ -29,12 +29,56 @@
     padding-bottom: none;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     
+    
   }
   
+  .card--reinbow{
+    box-shadow: 3px 4px 4px 5px rgba(255, 255, 0, 0.14), 0 3px 1px -2px rgba(255, 255, 0, 0.12), 0 1px 5px 0 rgba(255, 255, 0, 0.2) !important;
+    background: -moz-linear-gradient(left,
+    rgba(255,0,0,0.2),
+    rgba(255,69,0,0.2),
+    rgba(255,255,0,0.2),
+    rgba(0,128,0,0.2),
+    rgba(0,0,255,0.2),
+    rgba(75,0,130,0.2),
+    rgba(238,130,238,0.2)
+    );
+    background: -webkit-gradient(linear, left center, right center,
+      from(rgba(255,0,0,0.2)),
+      color-stop(14%, rgba(255,69,0,0.2)),
+      color-stop(28%, rgba(255,255,0,0.2)),
+      color-stop(42%, rgba(0,128,0,0.2)),
+      color-stop(56%, rgba(0,0,255,0.2)),
+      color-stop(70%, rgba(75,0,130,0.2)),
+      to(rgba(238,130,238,0.2))
+    );
+    font-family: 'HanziPen SC','Osaka',sans-serif;
+    color: #0000CC;
+    
+  } 
   
+
+  .card--gold{
+    box-shadow: 3px 4px 4px 5px rgba(255, 255, 0, 0.14), 0 3px 1px -2px rgba(255, 255, 0, 0.12), 0 1px 5px 0 rgba(255, 255, 0, 0.2) !important;
+  }
+  .card--silver{
+    box-shadow: 3px 4px 4px 5px rgba(188, 189, 194, 0.14), 0 3px 1px -2px rgba(188, 189, 194, 0.12), 0 1px 5px 0 rgba(188, 189, 194, 0.2) !important;
+
+  }
+
+  .card--bronze{
+    box-shadow: 3px 4px 4px 5px rgba(158, 79, 45, 0.14), 0 3px 1px -2px rgba(158, 79, 45, 0.12), 0 1px 5px 0 rgba(158, 79, 45, 0.2) !important;
+  }
+
+  .card--0{
+    background-color: #003333;
+    font-family: 'HanziPen SC',sans-serif;
+    color: white;
+  }
   .card{
     margin-bottom: 50px;
     margin-top: 0px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     .card--content{
       border-radius: 0 0 2px 2px;
       word-break: break-word;
@@ -43,8 +87,13 @@
  
     }
     .card--buttons{
-      margin-left: 20px;
+      margin: 5px 20px;
       position: relative;
+
+      .card--average{
+        float: right;
+        padding: 20px 20px;
+      }
 
       .btn{
           margin:10px 7px 17px 0;

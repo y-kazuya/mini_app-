@@ -62,12 +62,12 @@
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
 [type="radio"].with-gap:checked + span:after {
-  border: $radio-border;
+  border: #2f1617;
 }
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:after {
-  background-color: $radio-fill-color;
+  background-color: $main_color;
 }
 
 [type="radio"]:checked + span:after {
@@ -91,7 +91,7 @@
 
 [type="radio"].with-gap:disabled:checked + span:after {
   border: none;
-  background-color: $input-disabled-color;
+  background-color: $main_color;
 }
 
 /* Disabled style */
@@ -102,14 +102,14 @@
 }
 
 [type="radio"]:disabled + span {
-  color: $input-disabled-color;
+  color: $main_color;
 }
 
 [type="radio"]:disabled:not(:checked) + span:before {
-  border-color: $input-disabled-color;
+  border-color: $main_color;
 }
 
 [type="radio"]:disabled:checked + span:after {
-  background-color: $input-disabled-color;
+  background-color: $main_color;
   border-color: $input-disabled-solid-color;
 }

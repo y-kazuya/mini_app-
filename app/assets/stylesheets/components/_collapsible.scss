@@ -2,7 +2,9 @@
   border-top: 1px solid $collapsible-border-color;
   border-right: 1px solid $collapsible-border-color;
   border-left: 1px solid $collapsible-border-color;
-  margin: $element-top-margin 0 $element-bottom-margin 0;
+  width: 18%;
+  position:absolute; top: $hedder_height; right:0px;
+  display: none;
   @extend .z-depth-1;
 }
 
@@ -88,4 +90,19 @@
     margin: 16px 0;
     // transform: scaleX(1);
   }
+}
+
+.sub_menu_content{
+  display: none;
+}
+
+.after_sub_menu{
+  border-bottom: dashed 2px orange;
+  color: $main_color;
+  
+}
+.active{
+  -webkit-transform: rotate(0.125turn);
+  transform: rotate(0.125turn);
+  transition: 0.2s ease-in-out;
 }

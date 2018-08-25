@@ -1,0 +1,29 @@
+
+= form_for [@post, comment],html: {class:"comment"} do |f|
+  .comment--info
+    .comment--info__name     
+      = "投稿者： #{comment.user.name}"
+    .comment--info__date
+      = "投稿日時： #{comment.created_at.strftime("%Y/%m/%d")}"
+    .comment--info__score
+      - if comment.score?
+        #comment-score
+          = "#{comment.score}点"
+      - else
+        #comment-score
+          未評価
+      =f.number_field :score, max: 100, min: 0, class: "edit--comment--score"
+  .comment--text
+    =f.text_field :text,value: "#{comment.text}", id: "autocomplete-input", class: "autocomplete edit--comment--text"
+    - if comment.text?
+      #text
+        = comment.text
+    - else
+      コメントはありません
+  -if user_signed_in? && comment.user.id == current_user.id 
+    .comment--edit
+      .waves-effect.waves-light.btn.edit--btn
+        Edit
+      = f.submit '送信',class: "waves-effect waves-light btn submit--btn" 
+     
+      
